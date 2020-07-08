@@ -62,6 +62,7 @@
   max-width: 100%;
   max-height: 10rem;
   border-radius: 10px;
+  align-self: center;
 }
 
 .blogImgDIV {
@@ -71,30 +72,26 @@
   margin-left: 20px;
 }
 
-.blogButton {
-  border-radius: 17px;
-  background-color: rgba(255, 220, 193, 1);
-  font-family: Lucida Sans Typewriter;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  border: none;
-  color: white;
-  margin-top: 2rem;
-  text-align: center;
-  vertical-align: middle;
-  width: 150px;
-  padding: 10px;
-
-  transition: all 0.2s ease-in-out;
-}
-
 .blogButton:hover {
   transform: scale(1.1);
 }
 
 @media only screen and (max-width: 750px) {
-  .blogImage {
-    max-height: 100%;
+
+/* TEMP FIX BY REMOVING IMAGES */
+
+  .blogBox {
+    grid-template-columns: 100%;
+    grid-template-rows: 70% 30%;
   }
+
+  .blogFlex {
+    justify-content: flex-start;
+  }
+  
+  .blogImage {
+    display: none;
+    
+  }
+
 }

@@ -15,3 +15,8 @@ body {
   height: 100vh;
   grid-template-rows: auto 90%;
 }
+
+@font-face {
+  font-family: "Lucida Sans Typewriter";
+  src: url("../fonts/Lucida\ Sans\ Typewriter\ Regular.ttf") format("ttf");
+}
