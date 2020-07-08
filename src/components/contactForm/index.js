@@ -15,7 +15,7 @@ export default class James extends Component {
           method="post"
           netlify-honeypot="bot-field"
           data-netlify="true"
-          data-netlify-recaptcha="true"
+          // data-netlify-recaptcha="true"
           name="contact"
         >
           <div className="contactBox">
@@ -64,7 +64,7 @@ export default class James extends Component {
               send.
             </button>
             <input className="clear" type="reset" value="clear" />
-            <div data-netlify-recaptcha="true"></div>
+            {/* <div data-netlify-recaptcha="true"></div> */}
           </div>
         </form>
       </div>
