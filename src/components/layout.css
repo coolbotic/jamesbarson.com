@@ -18,5 +18,11 @@ body {
 
 @font-face {
   font-family: "Lucida Sans Typewriter";
-  src: url("../fonts/Lucida\ Sans\ Typewriter\ Regular.ttf") format("ttf");
+  src: url("../fonts/Lucida-Sans-Typewriter-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lucida Sans Typewriter";
+  src: url("../fonts/Lucida-Sans-Typewriter-Bold.ttf") format("truetype");
+  font-weight: bold;
 }
