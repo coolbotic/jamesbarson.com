@@ -19,10 +19,11 @@
   opacity: 0.5; /* Opactity on the image */
   z-index: -1; /* Puts image to the back so text can be on top */
   position: absolute; /* Takes image out of page flow so text can be placed ontop */
-  left: 45%; /* Left and right set image to center */
-  right: 45%;
-  margin-left: -45%; /* Margin left and right pull image out from center to edge of container */
-  margin-right: -45%;
+  /*left: 45%;  Left and right set image to center */
+  /* right: 45%; */
+  /* margin-left: -45%;  Margin left and right pull image out from center to edge of container */
+  /* margin-right: -45%; */
+  width: 100%;
 }
 
 .blogInfo {
@@ -45,7 +46,7 @@
   background-color: rgb(255, 255, 255, 1);
   filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
   border-radius: 30px;
-  padding: 0px 35px 35px 35px;
+  /* padding: 0px 35px 35px 35px; */
 }
 
 .blogTempateLables {
@@ -74,6 +75,8 @@
 
 .blogContent {
   display: flex;
+  padding: 0px 35px 35px 35px;
+  
 }
 
 .blogContent img {
