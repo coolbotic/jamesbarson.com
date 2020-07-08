@@ -1,0 +1,80 @@
+import React, { Component } from "react"
+import { document } from "browser-monads"
+
+import "./james.css"
+
+export default class James extends Component {
+  state = {
+    i: 0,
+    y: 0,
+    txt: "jamesbarson.com",
+    txtSave: "",
+    speed: 200,
+    min: 50,
+    max: 400,
+    flash: true,
+    timeOfFlash: 700,
+    numOfFlash: 3,
+    flashToggle: true,
+  }
+
+  typeWriter = () => {
+    console.log("TYPE")
+    this.setState({ flash: false })
+    if (this.state.i < this.state.txt.length) {
+      console.log(this.state.i)
+      document.getElementById("james").innerHTML = this.state.txtSave
+      document.getElementById("james").innerHTML += this.state.txt.charAt(
+        this.state.i
+      )
+      this.setState({ txtSave: document.getElementById("james").innerHTML })
+      document.getElementById("james").innerHTML += "|"
+      this.setState({ i: this.state.i + 1 })
+      this.setState({
+        speed:
+          this.state.min + Math.random() * (this.state.max - this.state.min),
+      })
+
+      setTimeout(this.typeWriter, this.state.speed)
+      console.log(this.state.speed)
+    } else {
+      this.setState({ flash: true })
+    }
+  }
+
+  flashCursor = () => {
+    if (this.state.flash) {
+      if (this.state.flashToggle) {
+        this.setState({ txt: this.state.txtSave + "|" })
+        this.setState({ flashToggle: false })
+      } else {
+        document.getElementById("james").innerHTML =
+          this.state.txtSave + `‏‏‎ ‎‏‏‎`
+        this.setState({ flashToggle: true })
+      }
+    }
+
+    if (this.state.y > this.state.numOfFlash) {
+      this.typeWriter()
+      this.setState({ y: -1 })
+    } else if (this.state.y === -1) {
+    } else {
+      this.setState({ y: this.state.y + 1 })
+    }
+    setTimeout(this.flashCursor, this.state.timeOfFlash)
+  }
+
+  componentDidMount() {
+    // this.flashCursor()
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <span id="james" className="james">
+          {this.state.txt}
+        </span>
+      </div>
+    )
+  }
+}

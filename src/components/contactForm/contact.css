@@ -1,0 +1,142 @@
+.wrapper {
+  /* margin: auto auto;
+  width: 90%;
+  max-width: 500px;
+  min-width: 75px;
+  justify-self: center;
+  align-self: center; */
+  margin: 3% auto;
+  width: 90%;
+  max-width: 600px;
+  min-width: 280px;
+  justify-self: center;
+  align-self: start;
+}
+
+.contact_title {
+  display: flex;
+  font-family: Lucida Sans Typewriter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  color: rgb(59, 59, 59);
+  text-align: center;
+  justify-self: center;
+  align-self: center;
+}
+
+.contactBox_title {
+  flex-direction: column;
+  display: flex;
+  background-color: rgb(255, 255, 255, 1);
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+  border-radius: 30px;
+  padding: 15px 15px 15px 15px;
+  margin-bottom: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+.contactBox {
+  flex-direction: column;
+  display: flex;
+  background-color: rgb(255, 255, 255, 1);
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+  border-radius: 30px;
+  padding: 20px 35px 35px 35px;
+}
+
+.lables {
+  display: flex;
+  font-family: Lucida Sans Typewriter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  color: rgb(59, 59, 59);
+  text-align: center;
+  justify-self: center;
+  align-self: center;
+  padding-top: 15px;
+  padding-bottom: 3px;
+}
+
+.send {
+  border-radius: 17px;
+  background-color: rgba(255, 220, 193, 1);
+  font-family: Lucida Sans Typewriter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  border: none;
+  color: white;
+  margin-top: 2rem;
+
+  width: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  justify-self: center;
+  align-self: center;
+  padding: 10px;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.send:hover {
+  transform: scale(1.1);
+}
+
+.clear {
+  background-color: transparent;
+  font-family: Lucida Sans Typewriter;
+  font-style: italic;
+  font-weight: normal;
+  text-decoration: underline;
+  font-size: 12px;
+  border: none;
+  color: grey;
+
+  /* width: 100px; */
+
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  padding-top: 10px;
+}
+
+.clear:hover {
+  font-weight: bold;
+}
+
+.input {
+  display: flex;
+  border-width: 0.5px;
+  border-radius: 15px;
+  /* border-color: grey; */
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+  font-family: Lucida Sans Typewriter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  color: grey;
+  padding: 8px;
+  width: 100%;
+  /* padding-bottom: 10px; */
+}
+
+@media only screen and (max-width: 750px) {
+  .wrapper {
+    /* margin: auto auto; */
+    width: 90%;
+    max-width: 600;
+    min-width: 75px;
+    justify-self: center;
+    align-self: center;
+  }
+}

@@ -1,0 +1,181 @@
+.blogTempateWrapper {
+  margin: 2% auto;
+  width: 100%;
+  max-width: 1450px;
+  min-width: 100px;
+  justify-self: center;
+  align-self: start;
+  /* padding: 10px; */
+  /* display: flex; */
+}
+
+.blogHero {
+  height: 350px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  background-color: #cccccc; /* only shown if image does not load */
+  border-radius: 30px 30px 0px 0px; /* Just radius on the top left and right ot match container */
+  opacity: 0.5; /* Opactity on the image */
+   z-index: -1; /* Puts image to the back so text can be on top */
+   position: absolute; /* Takes image out of page flow so text can be placed ontop */
+  left: 50%; /* Left and right set image to center */
+  right: 50%;
+  margin-left: -50%; /* Margin left and right pull image out from center to edge of container */
+  margin-right: -50%;
+  
+}
+
+
+.blogInfo {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   min-height: 350px;
+   text-align: center;
+}
+
+.blogHeaderBorder {
+   background-color: rgb(255, 255, 255,0.5);
+   padding: 20px 25px 20px 25px;
+   border-radius: 35px;
+}
+
+.blogTempateBox {
+  margin-top: 2%;
+  background-color: rgb(255, 255, 255, 1);
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+  border-radius: 30px;
+  padding: 0px 35px 35px 35px;
+}
+
+.blogTempateLables {
+  font-family: Lucida Sans Typewriter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  color: rgb(59, 59, 59);
+  /* padding-left: 30px; */
+  align-self: start;
+}
+
+.blogTempateTitle {
+  font-size: 35px;
+  text-align: center;
+  max-width: 960px;
+  align-self: center;
+}
+
+.blogTempateDate {
+  font-size: 20px;
+  text-align: center;
+  max-width: 960px;
+  align-self: center;
+}
+
+
+
+.blogContent {
+ display: flex;
+}
+
+.blogContent img {
+  border-radius: 10px;
+}
+
+.blogContent hr {
+  margin-top: 20px;
+}
+
+.center {
+  width: 90%;
+  display: block;
+  margin: 30px auto;
+}
+
+.right {
+  float: right;
+  margin: 40px 0 40px 60px;
+  max-width: 300px;
+  /* max-height: 250px; */
+  /* margin: 20px; */
+}
+
+.blogContent p {
+  font-family: Lucida Sans Typewriter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  word-spacing: -4px;
+  color: rgb(59, 59, 59);
+  /* padding-left: 30px; */
+  align-self: start;
+  padding-top: 20px;
+}
+
+
+.blogContent h1 {
+  font-family: Lucida Sans Typewriter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  word-spacing: -4px;
+  color: rgb(59, 59, 59);
+  /* padding-left: 30px; */
+  padding-top: 20px;
+}
+
+.blogContent h2 {
+  font-family: Lucida Sans Typewriter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  word-spacing: -4px;
+  color: rgb(59, 59, 59);
+  /* padding-left: 30px; */
+  padding-top: 20px;
+}
+
+
+.blogContent h3 {
+  font-family: Lucida Sans Typewriter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  word-spacing: -4px;
+  color: rgb(59, 59, 59);
+  /* padding-left: 30px; */
+  padding-top: 20px;
+}
+
+.blogContent li {
+  font-family: Lucida Sans Typewriter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  word-spacing: -4px;
+  color: rgb(59, 59, 59);
+}
+
+.blogContent ol {
+  padding-top: 20px;
+ padding-left: 50px;
+}
+
+.blogContent .medium {
+  width: 50%;
+}
+
+.blogContent .small {
+  width: 20%;
+}
+
+@media screen and (max-width: 1000px) {
+  .right {
+    float: none;
+    width: 90%;
+    display: block;
+    margin: 60px auto;
+  }
+}
