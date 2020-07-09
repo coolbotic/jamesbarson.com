@@ -7,7 +7,6 @@ import "./blog.css"
 const BlogTemplate = props => {
   return (
     <Layout>
-      <meta name="viewport" content="width=device-width,initial-scale=1" />
       <SEO
         title={props.data.contentfulBlog.seoTitle}
         description={props.data.contentfulBlog.seoDescription}
