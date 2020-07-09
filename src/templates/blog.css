@@ -23,7 +23,13 @@
   /* right: 45%; */
   /* margin-left: -45%;  Margin left and right pull image out from center to edge of container */
   /* margin-right: -45%; */
+  
   width: 100%;
+  max-width: 2000px;
+  min-width: 100px;
+  justify-self: center;
+  align-self: start;
+  
 }
 
 .blogInfo {
