@@ -7,6 +7,7 @@ import "./blog.css"
 const BlogTemplate = props => {
   return (
     <Layout>
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
       <SEO
         title={props.data.contentfulBlog.seoTitle}
         description={props.data.contentfulBlog.seoDescription}
@@ -23,12 +24,13 @@ const BlogTemplate = props => {
             ></div>
             <div className="blogInfo">
               <div className="blogHeaderBorder">
-              <h1 className="blogTempateLables blogTempateTitle">
-                {props.data.contentfulBlog.title}
-              </h1>
-              <h2 className="blogTempateLables blogTempateDate">
-                {props.data.contentfulBlog.createdAt}
-              </h2></div>
+                <h1 className="blogTempateLables blogTempateTitle">
+                  {props.data.contentfulBlog.title}
+                </h1>
+                <h2 className="blogTempateLables blogTempateDate">
+                  {props.data.contentfulBlog.createdAt}
+                </h2>
+              </div>
             </div>
           </div>
 
