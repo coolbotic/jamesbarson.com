@@ -11,8 +11,7 @@
 
 .blogHero {
   height: 350px; /* You must set a specified height */
-  background-position: center; /* Center the image */
-
+  background-position: center center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
   -webkit-background-size: cover;
@@ -22,18 +21,15 @@
   border-radius: 30px 30px 0px 0px; /* Just radius on the top left and right ot match container */
   opacity: 0.5; /* Opactity on the image */
   z-index: -1; /* Puts image to the back so text can be on top */
-  position: absolute; /* Takes image out of page flow so text can be placed ontop */
-  left: 45%; /* Left and right set image to center*/
-  right: 45%;
-  margin-left: -45%; /* Margin left and right pull image out from center to edge of container */
-  margin-right: -45%;
-  max-width: 100%;
-  -webkit-max-width: 100%;
-  overflow: hidden;
+  position: fixed; /* Takes image out of page flow so text can be placed ontop */
+  
+  width: 100%;
+
 
   /* max-width: 1500px;
   width: 100%; */
 }
+
 
 .blogInfo {
   display: flex;
