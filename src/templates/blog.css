@@ -21,11 +21,11 @@
   border-radius: 30px 30px 0px 0px; /* Just radius on the top left and right ot match container */
   opacity: 0.5; /* Opactity on the image */
   z-index: -1; /* Puts image to the back so text can be on top */
-  position: fixed; /* Takes image out of page flow so text can be placed ontop */
-  
+  position: absolute; /* Takes image out of page flow so text can be placed ontop */
+  display: inline-block;
   width: 100%;
-
-
+  padding-left: 5%;
+  padding-right: 5%;
   /* max-width: 1500px;
   width: 100%; */
 }
