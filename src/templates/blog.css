@@ -1,15 +1,28 @@
 .blogTempateWrapper {
   margin: 2% auto;
-  width: 100%;
+  width: 90%;
   max-width: 1450px;
   min-width: 100px;
   justify-self: center;
   align-self: start;
+  
   /* padding: 10px; */
   /* display: flex; */
 }
 
+.blogTempateBox {
+  margin-top: 2%;
+  background-color: rgb(255, 255, 255, 1);
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+  border-radius: 30px;
+}
+
+.blogHeader {
+  position: relative;
+}
+
 .blogHero {
+  
   height: 350px; /* You must set a specified height */
   background-position: center center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -22,12 +35,10 @@
   opacity: 0.5; /* Opactity on the image */
   z-index: -1; /* Puts image to the back so text can be on top */
   position: absolute; /* Takes image out of page flow so text can be placed ontop */
-  width: 100%;
- 
-  /* max-width: 1500px;
-  width: 100%; */
-}
 
+
+  min-width: 100%; 
+}
 
 .blogInfo {
   display: flex;
@@ -42,15 +53,6 @@
   background-color: rgb(255, 255, 255, 0.5);
   padding: 20px 25px 20px 25px;
   border-radius: 35px;
-}
-
-.blogTempateBox {
-  /* margin-top: 2%; */
-  background-color: rgb(255, 255, 255, 1);
-  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
-  border-radius: 30px;
- margin-left: 5%;
- margin-right: 5%; 
 }
 
 .blogTempateLables {

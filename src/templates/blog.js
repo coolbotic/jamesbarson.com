@@ -14,14 +14,14 @@ const BlogTemplate = props => {
       />
       <div className="blogTempateWrapper">
         <div className="blogTempateBox">
-          <div
+          
+          <div className="blogHeader">
+            <div
               className="blogHero"
               style={{
                 backgroundImage: `url(${props.data.contentfulBlog.featuredImage.fluid.src})`,
               }}
             ></div>
-          <div className="blogHeader">
-            
             <div className="blogInfo">
               
               <div className="blogHeaderBorder">
