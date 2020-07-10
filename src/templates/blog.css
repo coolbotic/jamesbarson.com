@@ -1,6 +1,6 @@
 .blogTempateWrapper {
   margin: 2% auto;
-  width: 90%;
+  width: 100%;
   max-width: 1450px;
   min-width: 100px;
   justify-self: center;
@@ -22,10 +22,8 @@
   opacity: 0.5; /* Opactity on the image */
   z-index: -1; /* Puts image to the back so text can be on top */
   position: absolute; /* Takes image out of page flow so text can be placed ontop */
-  display: inline-block;
   width: 100%;
-  padding-left: 5%;
-  padding-right: 5%;
+ 
   /* max-width: 1500px;
   width: 100%; */
 }
@@ -47,11 +45,12 @@
 }
 
 .blogTempateBox {
-  margin-top: 2%;
+  /* margin-top: 2%; */
   background-color: rgb(255, 255, 255, 1);
   filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
   border-radius: 30px;
-  /* padding: 0px 35px 35px 35px; */
+ margin-left: 5%;
+ margin-right: 5%; 
 }
 
 .blogTempateLables {
