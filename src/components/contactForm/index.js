@@ -59,7 +59,9 @@ export default class James extends Component {
                 rows="5"
               />
             </div>
-            <div data-netlify-recaptcha="true"></div>
+            <p>
+              <div data-netlify-recaptcha="true"></div>
+            </p>
             <button className="send" type="submit">
               send.
             </button>
