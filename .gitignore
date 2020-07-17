@@ -9,7 +9,7 @@ yarn-error.log*
 .env.production
 .env.development
 
-.vscode
+.vscode/
 
 # Runtime data
 pids

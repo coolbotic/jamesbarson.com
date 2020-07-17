@@ -1,4 +1,4 @@
-<div style="background-color: rgba(255, 220, 193, 1);">
+<div style="background-color: rgba(255, 220, 193, 1);" class="bg-gray-dark">
 <p align="center">
   <a href="https://www.jamesbarson.com">
     <img alt="jamesbarson.com" src="src/images/logo.png" width="60" />
@@ -30,7 +30,7 @@ This is the code to my personal website that I used to learn ReactJS and Gatsby,
     - [ ]  Shrink nav for smaller devices as takes up too much space
     - [ ]  Add colour to active page on nav
     - [ ]  Add Transitions between pages ⇒ (https://www.gatsbyjs.org/docs/adding-page-transitions-with-plugin-transition-link/)
-    - [ ]  weird nav shift (maybe check if bar is there then change padding) (get rid of % distance )
+    - [x]  weird nav shift (maybe check if bar is there then change padding) (get rid of % distance )
     - [x]  Upload to github
     - [x]  Write my first blog post
 
@@ -49,7 +49,7 @@ This is the code to my personal website that I used to learn ReactJS and Gatsby,
     - Images taken at 1400px by 898px
     - [ ]  Portfolio clickable pages with more info
     - [ ]  Shrink text on smaller phones
-    - [ ]  Add rest of websites
+    - [x]  Add rest of websites
     - [x]  link new tab
 
 ### Blog
