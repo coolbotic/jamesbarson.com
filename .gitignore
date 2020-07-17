@@ -10,6 +10,7 @@ yarn-error.log*
 .env.development
 
 .vscode/
+settings.json
 
 # Runtime data
 pids
