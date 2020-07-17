@@ -9,8 +9,11 @@ yarn-error.log*
 .env.production
 .env.development
 
+#Config Files
 .vscode/
 settings.json
+.prettierignore
+.prettierrc
 
 # Runtime data
 pids
