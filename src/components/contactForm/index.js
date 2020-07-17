@@ -16,6 +16,7 @@ export default class James extends Component {
           netlify-honeypot="bot-field"
           data-netlify="true"
           data-netlify-recaptcha="true"
+          action="/"
           name="contact"
         >
           <div className="contactBox">
@@ -59,10 +60,10 @@ export default class James extends Component {
                 rows="5"
               />
             </div>
-            <p>
-              <div data-netlify-recaptcha="true"></div>
-            </p>
-            <button className="send" type="submit">
+
+            <div data-netlify-recaptcha="true"></div>
+
+            <button className="send" type="submit" value="submit">
               send.
             </button>
             <input className="clear" type="reset" value="clear" />

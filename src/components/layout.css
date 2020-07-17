@@ -1,6 +1,7 @@
 body {
   background-color: rgba(255, 220, 193, 1);
   overflow-y: auto;
+
 }
 
 * {
@@ -11,9 +12,11 @@ body {
 
 .container {
   display: grid;
-  width: 100%;
+  padding-left: 17px;
+  width: calc(100vw - 17px);
   height: 100vh;
   grid-template-rows: auto 90%;
+  
 }
 
 @font-face {
@@ -26,3 +29,5 @@ body {
   src: url("../fonts/Lucida-Sans-Typewriter-Bold.ttf") format("truetype");
   font-weight: bold;
 }
+
+

@@ -1,25 +1,27 @@
 nav {
   display: grid;
   grid-template-rows: minmax(min-content, 10px) min-content;
+  
 }
 
 nav .content {
   background-color: transparent;
   display: grid;
-  place-items: center;
+  align-items: center;
   grid-auto-flow: column;
-  align-content: space-evenly;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 50px;
+  padding-right: 50px;
+  
 }
 
 nav .content .links {
   display: grid;
+  justify-self: end;
   grid-gap: 30px;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content, 50px);
-  justify-self: end;
-  /* margin-right: 5%; */
+ margin-left: -4px;
+  
 }
 
 nav .content .links a {

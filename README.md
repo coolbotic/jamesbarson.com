@@ -63,3 +63,4 @@ This is the code to my personal website that I used to learn ReactJS and Gatsby,
 
     - [ ]  Make better looking (don't like the title bar)
     - [ ]  Drop down filter for enquires (text box explanation)
+    - [ ]  Add reCAPTCHA
