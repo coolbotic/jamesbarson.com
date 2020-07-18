@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React from "react"
 import Recaptcha from "react-google-recaptcha"
 import { navigate } from "gatsby"
 
@@ -23,6 +23,16 @@ function encode(data) {
 export default function Contact() {
   const [state, setState] = React.useState({})
   const recaptchaRef = React.createRef()
+  var recaptchaComplete = false
+
+  function onChange(value) {
+    //console.log("Captcha value:", value);
+    if (value === null) {
+      recaptchaComplete = false
+    } else {
+      recaptchaComplete = true
+    }
+  }
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -32,7 +42,8 @@ export default function Contact() {
     e.preventDefault()
     const form = e.target
     const recaptchaValue = recaptchaRef.current.getValue()
-    fetch("/", {
+     if (recaptchaComplete) {
+fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
@@ -41,8 +52,12 @@ export default function Contact() {
         ...state,
       }),
     })
-      .then(() => navigate(form.getAttribute("action")))
-      .catch(error => alert(error))
+    .then(() => navigate(form.getAttribute('action')))
+    .catch(error => alert(error))
+    } else {
+      alert("Please complete the Recaptcha")
+     }
+    
   }
 
   return (
@@ -55,7 +70,7 @@ export default function Contact() {
       <form
         name="contact"
         method="post"
-        action="/"
+        action="/thanks/"
         data-netlify="true"
         data-netlify-recaptcha="true"
         onSubmit={handleSubmit}
@@ -120,9 +135,13 @@ export default function Contact() {
             />
           </div>
 
-          {/* <div data-netlify-recaptcha="true"></div> */}
-          <Recaptcha className="recaptcha" ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
-
+          <Recaptcha
+            className="recaptcha"
+            ref={recaptchaRef}
+            sitekey={RECAPTCHA_KEY}
+            onChange={onChange}
+           
+          />
 
           <button className="send" type="submit" value="submit">
             send.
