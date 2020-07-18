@@ -74,7 +74,7 @@ button:focus {
   font-size: 20px;
   border: none;
   color: white;
-  margin-top: 2rem;
+  margin-top: 1rem;
 
   width: 100px;
 
@@ -128,6 +128,12 @@ button:focus {
   padding: 8px;
   width: 100%;
   /* padding-bottom: 10px; */
+}
+
+.recaptcha{
+  margin-top: 1rem;
+  justify-self: center;
+  align-self: center;
 }
 
 @media only screen and (max-width: 750px) {

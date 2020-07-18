@@ -121,7 +121,9 @@ export default function Contact() {
           </div>
 
           {/* <div data-netlify-recaptcha="true"></div> */}
-          <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
+          <Recaptcha className="recaptcha" ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
+
+
           <button className="send" type="submit" value="submit">
             send.
           </button>
