@@ -1,10 +1,10 @@
 import React, { Component } from "react"
 import Recaptcha from "react-google-recaptcha"
-import { navigate } from 'gatsby'
+import { navigate } from "gatsby"
 
 import "./contact.css"
 
-const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
+const RECAPTCHA_KEY = process.env.GATSBY_APP_SITE_RECAPTCHA_KEY
 if (typeof RECAPTCHA_KEY === "undefined") {
   throw new Error(`
   Env var GATSBY_APP_SITE_RECAPTCHA_KEY is undefined! 
