@@ -1,75 +1,133 @@
 import React, { Component } from "react"
+import Recaptcha from "react-google-recaptcha"
+import { navigate } from 'gatsby'
 
 import "./contact.css"
 
-export default class James extends Component {
-  render() {
-    return (
-      <div className="wrapper">
-        {/* Contact Title */}
-        <div className="contactBox_title">
-          <div className="contact_title">Contact Me</div>
-        </div>
+const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
+if (typeof RECAPTCHA_KEY === "undefined") {
+  throw new Error(`
+  Env var GATSBY_APP_SITE_RECAPTCHA_KEY is undefined! 
+  You probably forget to set it in your Netlify build environment variables. 
+  Make sure to get a Recaptcha key at https://www.netlify.com/docs/form-handling/#custom-recaptcha-2-with-your-own-settings
+  Note this demo is specifically for Recaptcha v2
+  `)
+}
 
-        <form
-          method="post"
-          netlify-honeypot="bot-field"
-          data-netlify="true"
-          data-netlify-recaptcha="true"
-          action="/"
-          name="contact"
-        >
-          <div className="contactBox">
-            <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="contact" />
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
 
-            <div className="name">
-              <label className="lables" htmlFor="name">
-                name
-              </label>
-              <input className="input" type="text" name="name" id="name" />
-            </div>
+export default function Contact() {
+  const [state, setState] = React.useState({})
+  const recaptchaRef = React.createRef()
 
-            <div className="email">
-              <label className="lables" htmlFor="email">
-                email
-              </label>
-              <input className="input" type="email" name="email" id="email" />
-            </div>
-
-            <div className="subject">
-              <label className="lables" htmlFor="subject">
-                subject
-              </label>
-              <input
-                className="input"
-                type="text"
-                name="subject"
-                id="subject"
-              />
-            </div>
-
-            <div className="message">
-              <label className="lables" htmlFor="message">
-                message
-              </label>
-              <textarea
-                className="input"
-                name="message"
-                id="message"
-                rows="5"
-              />
-            </div>
-
-            <div data-netlify-recaptcha="true"></div>
-
-            <button className="send" type="submit" value="submit">
-              send.
-            </button>
-            <input className="clear" type="reset" value="clear" />
-          </div>
-        </form>
-      </div>
-    )
+  const handleChange = e => {
+    setState({ ...state, [e.target.name]: e.target.value })
   }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    const form = e.target
+    const recaptchaValue = recaptchaRef.current.getValue()
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        "g-recaptcha-response": recaptchaValue,
+        ...state,
+      }),
+    })
+      .then(() => navigate(form.getAttribute("action")))
+      .catch(error => alert(error))
+  }
+
+  return (
+    <div className="wrapper">
+      {/* Contact Title */}
+      <div className="contactBox_title">
+        <div className="contact_title">Contact Me</div>
+      </div>
+
+      <form
+        name="contact"
+        method="post"
+        action="/"
+        data-netlify="true"
+        data-netlify-recaptcha="true"
+        onSubmit={handleSubmit}
+      >
+        <noscript>
+          <p>This form won’t work with Javascript disabled</p>
+        </noscript>
+
+        <div className="contactBox">
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="form-name" value="contact" />
+
+          <div className="name">
+            <label className="lables" htmlFor="name">
+              name
+            </label>
+            <input
+              className="input"
+              type="text"
+              name="name"
+              id="name"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="email">
+            <label className="lables" htmlFor="email">
+              email
+            </label>
+            <input
+              className="input"
+              type="email"
+              name="email"
+              id="email"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="subject">
+            <label className="lables" htmlFor="subject">
+              subject
+            </label>
+            <input
+              className="input"
+              type="text"
+              name="subject"
+              id="subject"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="message">
+            <label className="lables" htmlFor="message">
+              message
+            </label>
+            <textarea
+              className="input"
+              name="message"
+              id="message"
+              rows="5"
+              onChange={handleChange}
+            />
+          </div>
+
+          {/* <div data-netlify-recaptcha="true"></div> */}
+          <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
+          <button className="send" type="submit" value="submit">
+            send.
+          </button>
+          <input className="clear" type="reset" value="clear" />
+        </div>
+      </form>
+    </div>
+  )
 }
