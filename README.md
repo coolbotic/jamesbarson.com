@@ -11,6 +11,8 @@
 
 ## 🚀 My Website
 
+<a href="https://www.jamesbarson.com">jamesbarson.com</a>
+
 **Sofware Used**
 
     Gatsby (Starter)
