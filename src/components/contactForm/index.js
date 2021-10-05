@@ -25,7 +25,7 @@ export default function Contact() {
   const recaptchaRef = React.createRef()
   var recaptchaComplete = false
 
-  function onChange(value) {
+  function onRecapChange(value) {
     //console.log("Captcha value:", value);
     if (value === null) {
       recaptchaComplete = false
@@ -92,6 +92,7 @@ fetch("/", {
               type="text"
               name="name"
               id="name"
+              onChange={handleChange}
             />
           </div>
 
@@ -104,6 +105,7 @@ fetch("/", {
               type="email"
               name="email"
               id="email"
+              onChange={handleChange}
             />
           </div>
 
@@ -116,6 +118,7 @@ fetch("/", {
               type="text"
               name="subject"
               id="subject"
+              onChange={handleChange}
             />
           </div>
 
@@ -128,6 +131,7 @@ fetch("/", {
               name="message"
               id="message"
               rows="5"
+              onChange={handleChange}
             />
           </div>
 
@@ -135,7 +139,7 @@ fetch("/", {
             className="recaptcha"
             ref={recaptchaRef}
             sitekey={RECAPTCHA_KEY}
-            onChange={onChange}
+            onChange={onRecapChange("Completed") }
            
           />
 
